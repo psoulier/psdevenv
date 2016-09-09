@@ -1,0 +1,15 @@
+# Opens file using MacVim.  Prompts user to create file if it doesn't exist.
+#
+if [ ! -f $1 ]
+then
+    read -p "File doesn't exist, create [Y/n]?" answer
+
+    if [[ "$answer" == "" || "$answer" == "y" || "$answer" == "Y" ]]; then
+	touch $1
+	open -a MacVim $1
+    fi
+else
+    open -a MacVim $1
+fi
+
+

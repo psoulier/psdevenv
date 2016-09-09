@@ -1,0 +1,51 @@
+set nocompatible
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
+set autoindent
+set ruler
+filetype plugin on
+
+" Airline configuration
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+set laststatus=2
+
+
+
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
+
+execute pathogen#infect()
+
+" autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+
+
+if has("autocmd")
+  " Enable file type detection.
+  " Use the default filetype settings, so that mail gets 'tw' set to 72,
+  " 'cindent' is on in C files, etc.
+  " Also load indent files, to automatically do language-dependent indenting.
+  filetype plugin indent on
+  " ...
+endif
+
+" Move to next or previous tab using standard Mac key bindings.
+noremap <C-Tab>:    tabnext<CR>
+noremap <C-S-Tab>:  tabprev<CR>
+
+autocmd FileType c,cpp,python,humu setl expandtab shiftwidth=4 softtabstop=4
+autocmd FileType html,css,js,less,java setl expandtab shiftwidth=2 softtabstop=2
+autocmd FileType tex,cls setl tw=80
+
+" Setup default color scheme
+colorscheme dracula
+syntax on
+
+set autochdir
+let NERDTreeChDirMode=2
+
