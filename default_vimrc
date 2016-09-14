@@ -4,6 +4,8 @@ set autoindent
 set ruler
 filetype plugin on
 
+execute pathogen#infect()
+
 " Airline configuration
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -12,7 +14,7 @@ set laststatus=2
 
 
 
-fun! <SID>StripTrailingWhitespaces()
+function StripTrailingWhitespaces()
     let l = line(".")
     let c = col(".")
     %s/\s\+$//e
@@ -20,9 +22,16 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 
 
-execute pathogen#infect()
+set ignorecase
+set smartcase
+set gdefault
+set incsearch
+set showmatch
+set hlsearch
+nnoremap <leader><space> :noh<cr>
 
-" autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+set number
+set cursorline
 
 
 if has("autocmd")
@@ -34,18 +43,24 @@ if has("autocmd")
   " ...
 endif
 
+" --- Key Mappings ---
 " Move to next or previous tab using standard Mac key bindings.
-noremap <C-Tab>:    tabnext<CR>
-noremap <C-S-Tab>:  tabprev<CR>
+" I don't think these work like you think they do...already mapped by OS X
+" noremap <C-Tab>:    tabnext<CR>
+" noremap <C-S-Tab>:  tabprev<CR>
 
-autocmd FileType c,cpp,python,humu setl expandtab shiftwidth=4 softtabstop=4
-autocmd FileType html,css,js,less,java setl expandtab shiftwidth=2 softtabstop=2
+nnoremap <A-Left>    :bprev<cr>
+nnoremap <A-Right>   :bnext<cr>
+
+" --- File Type Setup ---
+autocmd FileType html,css,js,less,java setl tw=80 expandtab shiftwidth=2 softtabstop=2
 autocmd FileType tex,cls setl tw=80
 
 " Setup default color scheme
 colorscheme dracula
 syntax on
 
+" Nerd Tree setup
 set autochdir
 let NERDTreeChDirMode=2
 
