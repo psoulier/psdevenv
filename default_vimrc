@@ -49,12 +49,14 @@ endif
 " noremap <C-Tab>:    tabnext<CR>
 " noremap <C-S-Tab>:  tabprev<CR>
 
-nnoremap <A-Left>    :bprev<cr>
-nnoremap <A-Right>   :bnext<cr>
+nnoremap <a-left>    bprev<cr>
+nnoremap <a-right>   bnext<cr>
 
 " --- File Type Setup ---
 autocmd FileType html,css,js,less,java setl tw=80 expandtab shiftwidth=2 softtabstop=2
-autocmd FileType tex,cls setl tw=80
+
+" Override default Modula 'md' extension to Markddown.
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Setup default color scheme
 colorscheme dracula
