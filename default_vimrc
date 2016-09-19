@@ -49,8 +49,8 @@ endif
 " noremap <C-Tab>:    tabnext<CR>
 " noremap <C-S-Tab>:  tabprev<CR>
 
-nnoremap <a-left>    bprev<cr>
-nnoremap <a-right>   bnext<cr>
+nnoremap <C-p> :bprev<CR>
+nnoremap <C-n> :bnext<CR>
 
 " --- File Type Setup ---
 autocmd FileType html,css,js,less,java setl tw=80 expandtab shiftwidth=2 softtabstop=2
