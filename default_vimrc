@@ -4,6 +4,7 @@ set autoindent
 set ruler
 filetype plugin on
 
+
 execute pathogen#infect()
 
 " Airline configuration
@@ -49,8 +50,13 @@ endif
 " noremap <C-Tab>:    tabnext<CR>
 " noremap <C-S-Tab>:  tabprev<CR>
 
+<<<<<<< HEAD
 nnoremap <C-p> :bprev<CR>
 nnoremap <C-n> :bnext<CR>
+=======
+nnoremap <A-Left>    :bprev<cr>
+nnoremap <A-Right>   :bnext<cr>
+>>>>>>> 07d93e900392d9cebc2f209f9b6b07b17fbc0a6c
 
 " --- File Type Setup ---
 autocmd FileType html,css,js,less,java setl tw=80 expandtab shiftwidth=2 softtabstop=2

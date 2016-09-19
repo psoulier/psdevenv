@@ -18,7 +18,18 @@ fi
 --init --recursive` does the trick. 
 
 
-## Vim
+## Vim Notes
+
+### Key Mappings
+Vim loads initialization files in an order something like the following:
+1. $VIM/vimrc
+2. $HOME/.vimrc
+3. $VIM/gvimrc
+4. $HOME/.gvimrc
+
+I was trying to map Alt- keys in my .vimrc for switching buffers, but they were being
+overriden.  MacVim has a bunch of default key mappings that override the Alt keys in gvimrc.
+I didn't want to maintain two initialization files
 
 Buffers
 - Next/previous buffer: `<A-Right>/<A-Left>`
