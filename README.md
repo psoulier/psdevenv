@@ -37,3 +37,9 @@ Buffers
 Searching
 - Clear last search: `<leader><space>`
 - All search/replace are global by default (set via `gdefault`).
+
+### File Type Extensions
+File type extensions should go in `vim/after/ftplugin` with the name of the *file type*.  The file
+type is different from the extension (i.e.: for markdown, there should be a file called
+`markdown.vim`; not `md.vim`).
+
