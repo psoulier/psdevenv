@@ -6,5 +6,5 @@ setlocal shiftwidth=4
 setlocal autoindent
 
 
-autocmd BufWritePre *.h,*.c,*.hpp,*.cpp :call StripTrailingWhitespaces()
+autocmd BufWritePre *.java :call StripTrailingWhitespaces()
 

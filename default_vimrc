@@ -50,16 +50,11 @@ endif
 " noremap <C-Tab>:    tabnext<CR>
 " noremap <C-S-Tab>:  tabprev<CR>
 
-<<<<<<< HEAD
 nnoremap <C-p> :bprev<CR>
 nnoremap <C-n> :bnext<CR>
-=======
-nnoremap <A-Left>    :bprev<cr>
-nnoremap <A-Right>   :bnext<cr>
->>>>>>> 07d93e900392d9cebc2f209f9b6b07b17fbc0a6c
 
 " --- File Type Setup ---
-autocmd FileType html,css,js,less,java setl tw=80 expandtab shiftwidth=2 softtabstop=2
+autocmd FileType html,css,js,less setl tw=80 expandtab shiftwidth=2 softtabstop=2
 
 " Override default Modula 'md' extension to Markddown.
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
@@ -67,6 +62,8 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 " Setup default color scheme
 colorscheme dracula
 syntax on
+
+set listchars=tab:▸·
 
 " Nerd Tree setup
 set autochdir
