@@ -50,7 +50,7 @@ endif
 " noremap <C-Tab>:    tabnext<CR>
 " noremap <C-S-Tab>:  tabprev<CR>
 
-nnoremap <C-p> :bprev<CR>
+nnoremap <C-b> :bprev<CR>
 nnoremap <C-n> :bnext<CR>
 
 " --- File Type Setup ---

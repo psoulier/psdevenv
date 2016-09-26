@@ -2,7 +2,7 @@
 " Markdown file (*.md) settings.
 "
 
-setl textwidth=100
+setl textwidth=80
 setl shiftwidth=4
 setl expandtab
 setl softtabstop=4

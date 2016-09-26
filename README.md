@@ -20,6 +20,16 @@ fi
 
 ## Vim Notes
 
+### Formatting Code
+* `%retab!` Convert tabs/spaces as per the current setting of `expandtab` (i.e., if `et` is set, all
+tabs are replaced with spaces and visa versa).  The '%' a range specifying the entire
+buffer, `!` uses `expandtab` setting.
+* `gg=G` Re-indent entire file (`gg` to top of file `=` indent, `G` to bottom of file).
+
+### Search and Replace
+All search/replace operations are set to global by default via `gdefault` .
+* Clear last search: `<leader><space>`
+
 ### Key Mappings
 Vim loads initialization files in an order something like the following:
 1. $VIM/vimrc
@@ -28,18 +38,30 @@ Vim loads initialization files in an order something like the following:
 4. $HOME/.gvimrc
 
 I was trying to map Alt- keys in my .vimrc for switching buffers, but they were being
-overriden.  MacVim has a bunch of default key mappings that override the Alt keys in gvimrc.
+overridden.  MacVim has a bunch of default key mappings that override the Alt keys in gvimrc.
 I didn't want to maintain two initialization files
 
 Buffers
-- Next/previous buffer: `<A-Right>/<A-Left>`
+- Previous/next buffer: `<C-b>` and `<C-n>`
 
-Searching
-- Clear last search: `<leader><space>`
-- All search/replace are global by default (set via `gdefault`).
+### Debugging Vim Scripts
+* `scriptnames` Useful for showing a list of all scripts and the load order.
 
 ### File Type Extensions
 File type extensions should go in `vim/after/ftplugin` with the name of the *file type*.  The file
 type is different from the extension (i.e.: for markdown, there should be a file called
 `markdown.vim`; not `md.vim`).
 
+
+## Bash Notes
+
+### Updating Bash on MacOS
+MacOS uses an old version of bash.  Due to GPL license issues, bash isn't
+updated with the OS.  The following steps can be used to configure another
+version of bash for the OS using Homebrew:
+1. Update brew: `brew update`
+2. Install bash: `brew install bash`
+3. Become superuser to modify `/etc/shells`: `sudo -s`
+4. Update list of acceptable shells for the system: `cat /usr/local/bin/bash >> /etc/shells`
+5. Set user's shell: `chsh -s /usr/local/bin/bash
+    
