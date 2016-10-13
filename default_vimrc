@@ -60,7 +60,7 @@ autocmd FileType html,css,js,less setl tw=80 expandtab shiftwidth=2 softtabstop=
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Setup default color scheme
-colorscheme dracula
+colorscheme solarized
 syntax on
 
 set listchars=tab:▸·
