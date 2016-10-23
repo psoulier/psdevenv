@@ -53,6 +53,10 @@ endif
 nnoremap <C-b> :bprev<CR>
 nnoremap <C-n> :bnext<CR>
 
+" Insert closing brace when an open brace is followed by CR.  Won't insert
+" closing brace if no CR.
+inoremap {<CR> {<CR>}<Esc>ko
+
 " --- File Type Setup ---
 autocmd FileType html,css,js,less setl tw=80 expandtab shiftwidth=2 softtabstop=2
 
