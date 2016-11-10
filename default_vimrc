@@ -1,11 +1,11 @@
 set nocompatible
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
+
+execute pathogen#infect()
+
+set guifont=Fantasque\ Sans\ Mono:h14,DejaVu\ Sans\ Mono\ for\ Powerline:h12
 set autoindent
 set ruler
 filetype plugin on
-
-
-execute pathogen#infect()
 
 " Airline configuration
 let g:airline_powerline_fonts = 1
@@ -68,6 +68,7 @@ colorscheme solarized
 syntax on
 
 set listchars=tab:▸·
+set list
 
 " Nerd Tree setup
 set autochdir
