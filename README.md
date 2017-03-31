@@ -14,8 +14,11 @@ being used.
         . ~/Projects/psdevenv/bash_profile 
     fi 
     ```
-3. After cloning the repo, the submodules also need to be populated. For this `git submodule
---init --recursive` does the trick. 
+3. After cloning the repo, the submodules also need to be populated. 
+    ```sh
+    git submodule init
+    git submodule update --recursive
+    ```
 
 
 ## Vim Notes

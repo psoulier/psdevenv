@@ -1,19 +1,27 @@
 set nocompatible
 
-execute pathogen#infect()
+let g:pathogen_disabled = []
 
-set guifont=Fantasque\ Sans\ Mono:h14,DejaVu\ Sans\ Mono\ for\ Powerline:h12
+if ! has("gui_running")
+	call add(g:pathogen_disabled, 'vim-airline')
+endif
+
+
+set guifont=Fira\ Mono\ for\ Powerline\ 12
 set autoindent
 set ruler
 filetype plugin on
 
 " Airline configuration
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t'
-set laststatus=2
+if has("gui_running")
+	let g:airline_powerline_fonts = 1
+	let g:airline#extensions#tabline#enabled = 1
+	let g:airline#extensions#tabline#fnamemod = ':t'
+	set laststatus=2
+endif
 
 
+execute pathogen#infect()
 
 function StripTrailingWhitespaces()
     let l = line(".")
@@ -64,7 +72,13 @@ autocmd FileType html,css,js,less setl tw=80 expandtab shiftwidth=2 softtabstop=
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Setup default color scheme
-colorscheme solarized
+if has("gui_running")
+	colorscheme gruvbox
+	set bg=dark
+else
+	colorscheme atom-dark
+endif
+
 syntax on
 
 set listchars=tab:▸·
@@ -73,4 +87,6 @@ set list
 " Nerd Tree setup
 set autochdir
 let NERDTreeChDirMode=2
+
+set tags=tags;/
 
