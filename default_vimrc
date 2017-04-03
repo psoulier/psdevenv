@@ -37,6 +37,9 @@ endfun
 
 set ignorecase
 set smartcase
+" This one got me...if you use a 'g' for a find/replace command, this will
+" toggle the global setting.  So, since it's on by default, putting a 'g'
+" (such as :%/old/new/g) will only find/replace first occurance on a line.
 set gdefault
 set incsearch
 set showmatch
@@ -98,11 +101,13 @@ set list
 set autochdir
 
 " Nerd Tree setup
-let NERDTreeChDirMode=2
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
+" let NERDTreeChDirMode=2
+let NERDTreeDirArrows=1
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" Ctags setup
 set tags=tags;/
+
+
 
