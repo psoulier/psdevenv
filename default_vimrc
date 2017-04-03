@@ -1,25 +1,29 @@
 set nocompatible
 
+" Airline configuration.
+" Airline isn't so good using unpatched console fonts.  Only enable Airline
+" when GUI mode is running.
 let g:pathogen_disabled = []
-
 if ! has("gui_running")
 	call add(g:pathogen_disabled, 'vim-airline')
-endif
-
-
-set guifont=Fira\ Mono\ for\ Powerline\ 12
-set autoindent
-set ruler
-filetype plugin on
-
-" Airline configuration
-if has("gui_running")
+else
 	let g:airline_powerline_fonts = 1
 	let g:airline#extensions#tabline#enabled = 1
 	let g:airline#extensions#tabline#fnamemod = ':t'
 	set laststatus=2
 endif
 
+" The font specification seems to be a wee bit different for MacVim vs gvim
+" on Ubuntu.
+if has("gui_macvim")
+	set guifont=Fira\ Mono\ for\ Powerline:h12
+else
+	set guifont=Fira\ Mono\ for\ Powerline\ 12
+endif
+
+set autoindent
+set ruler
+filetype plugin on
 
 execute pathogen#infect()
 
@@ -41,6 +45,13 @@ nnoremap <leader><space> :noh<cr>
 
 set number
 set cursorline
+
+
+set formatoptions=crqlj         " t - autowrap to textwidth
+                                " c - autowrap comments to textwidth
+                                " r - autoinsert comment leader with <Enter>
+                                " q - allow formatting of comments with :gq
+                                " l - don't format already long lines
 
 
 if has("autocmd")
@@ -84,9 +95,14 @@ syntax on
 set listchars=tab:▸·
 set list
 
-" Nerd Tree setup
 set autochdir
+
+" Nerd Tree setup
 let NERDTreeChDirMode=2
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 set tags=tags;/
 
