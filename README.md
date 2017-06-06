@@ -29,10 +29,12 @@ being used.
 tabs are replaced with spaces and visa versa).  The '%' a range specifying the entire
 buffer, `!` uses `expandtab` setting.
 * `gg=G` Re-indent entire file (`gg` to top of file `=` indent, `G` to bottom of file).
+* Simple way to reformat selection of code, in visual mode: `=`
 
 ### Search and Replace
 All search/replace operations are set to global by default via `gdefault`.
 
+* `:%s/search/replace/`
 * Clear last search: `<leader><space>`
 
 ### Key Mappings
@@ -74,3 +76,13 @@ version of bash for the OS using Homebrew:
 4. Update list of acceptable shells for the system: `cat /usr/local/bin/bash >> /etc/shells`
 5. Set user's shell: `chsh -s /usr/local/bin/bash
     
+
+## GNU Make Notes
+
+### Debugging
+Make has a few ways to "print" info - the following are probably the best
+(although maybe not intended for debugging):
+
+* `$(error text)` - make quits immediately after showing the message.
+* `$(warning test)`
+* `$(info text)`
