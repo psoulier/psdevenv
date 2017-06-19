@@ -74,6 +74,7 @@ endif
 
 nnoremap <C-b> :bprev<CR>
 nnoremap <C-n> :bnext<CR>
+nnoremap <leader>p :b#<CR>
 nnoremap <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 
 " Insert closing brace when an open brace is followed by CR.  Won't insert
