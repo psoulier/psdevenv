@@ -97,6 +97,15 @@ endif
 
 syntax on
 
+" 
+" Set the vertical split character to something that looks a little better
+" than the default pipe.
+"
+set fillchars+=vert:┋ 
+
+"
+" Set the characters for showing hard tabs.
+"
 set listchars=tab:▸·
 set list
 
