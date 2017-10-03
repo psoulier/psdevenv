@@ -77,6 +77,11 @@ nnoremap <C-n> :bnext<CR>
 nnoremap <leader>p :b#<CR>
 nnoremap <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 " Insert closing brace when an open brace is followed by CR.  Won't insert
 " closing brace if no CR.
 inoremap {<CR> {<CR>}<Esc>ko
