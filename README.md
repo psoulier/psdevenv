@@ -21,7 +21,12 @@ being used.
     ```
 
 
-## Vim Notes
+## Notes to Self (mostly Vim)
+Need to try these:
+* Clang format
+* you complete me
+* nerd commenter
+* a.vim
 
 ### Formatting Code
 
