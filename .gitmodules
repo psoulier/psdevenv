@@ -13,3 +13,6 @@
 [submodule "vim/bundle/ctrlp.vim"]
 	path = vim/bundle/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "vim/bundle/Recover.vim"]
+	path = vim/bundle/Recover.vim
+	url = https://github.com/chrisbra/Recover.vim.git
