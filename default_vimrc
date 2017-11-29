@@ -97,7 +97,7 @@ if has("gui_running")
 	colorscheme gruvbox
 	set bg=dark
 else
-	colorscheme atom-dark
+	colorscheme apprentice
 endif
 
 syntax on
