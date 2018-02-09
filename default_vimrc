@@ -82,9 +82,11 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+nnoremap <C-\> :vsplit<CR>
+
 " Insert closing brace when an open brace is followed by CR.  Won't insert
 " closing brace if no CR.
-inoremap {<CR> {<CR>}<Esc>ko
+inoremap {<CR> {<CR>}<Esc>k$a
 
 " --- File Type Setup ---
 autocmd FileType html,css,js,less setl tw=80 expandtab shiftwidth=2 softtabstop=2
@@ -94,10 +96,10 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Setup default color scheme
 if has("gui_running")
-	colorscheme gruvbox
-	set bg=dark
-else
 	colorscheme apprentice
+	"set bg=dark
+else
+	colorscheme dracula 
 endif
 
 syntax on
