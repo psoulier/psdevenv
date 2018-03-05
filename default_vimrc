@@ -7,10 +7,11 @@ let g:pathogen_disabled = []
 if ! has("gui_running")
 	call add(g:pathogen_disabled, 'vim-airline')
 else
-	let g:airline_powerline_fonts = 1
-	let g:airline#extensions#tabline#enabled = 1
-	let g:airline#extensions#tabline#fnamemod = ':t'
-	set laststatus=2
+	call add(g:pathogen_disabled, 'vim-airline')
+	"let g:airline_powerline_fonts = 1
+	"let g:airline#extensions#tabline#enabled = 1
+	"let g:airline#extensions#tabline#fnamemod = ':t'
+	"set laststatus=2
 endif
 
 " The font specification seems to be a wee bit different for MacVim vs gvim
@@ -18,7 +19,8 @@ endif
 if has("gui_macvim")
 	set guifont=Fira\ Mono\ for\ Powerline:h12
 else
-	set guifont=Fira\ Mono\ for\ Powerline\ 12
+	"set guifont=Fira\ Mono\ for\ Powerline\ 12
+	set guifont=IBM\ Plex\ Mono\ 12
 endif
 
 set autoindent
@@ -127,5 +129,9 @@ let NERDTreeDirArrows=1
 " Ctags setup
 set tags=tags;/
 
-
+" Run .vimrc from where vim is launched to load project-specific settings.
+" The secure is there to prevent accidentally loading a vim script that does
+" bad things.
+set exrc
+set secure
 
