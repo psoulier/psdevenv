@@ -74,8 +74,12 @@ endif
 " noremap <C-Tab>:    tabnext<CR>
 " noremap <C-S-Tab>:  tabprev<CR>
 
+"
+" Buffer management bindings
+"
 nnoremap <leader>p :b#<CR>
 nnoremap <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
+nnoremap <leader>o :buffers<CR>:buffer<Space>
 
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -89,6 +93,7 @@ nnoremap <C-\> :vsplit<CR>
 inoremap {<CR> {<CR>}<Esc>k$a
 
 inoremap jj <Esc>
+
 
 " --- File Type Setup ---
 autocmd FileType html,css,js,less setl tw=80 expandtab shiftwidth=2 softtabstop=2
