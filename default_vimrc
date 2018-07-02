@@ -16,8 +16,10 @@ endif
 
 " The font specification seems to be a wee bit different for MacVim vs gvim
 " on Ubuntu.
+" Fonts I like: Fira Mone, IBM Plex
 if has("gui_macvim")
-	set guifont=Fira\ Mono\ for\ Powerline:h12
+	"set guifont=Fira\ Mono\ for\ Powerline:h12
+	set guifont=IBM\ Plex\ Mono:h14
 else
 	"set guifont=Fira\ Mono\ for\ Powerline\ 12
 	set guifont=IBM\ Plex\ Mono\ 12
@@ -140,4 +142,19 @@ set tags=tags;/
 set exrc
 set secure
 
+" No you don't have to press shift key :) 
+nnoremap ; :
 
+" Awesome script by Damian Conway; lets you move visual blocks of code around
+" with Shift-ArrowKey.  
+vmap  <expr>  <S-LEFT>   DVB_Drag('left')
+vmap  <expr>  <S-RIGHT>  DVB_Drag('right')
+vmap  <expr>  <S-DOWN>   DVB_Drag('down')
+vmap  <expr>  <S-UP>     DVB_Drag('up')
+let g:DVB_TrimWS = 1
+
+" Also from Damian Conway; toggle comments for blocks of code.
+nmap     <silent> <leader>/ :call ToggleComment()<CR><CR>0
+xnoremap <silent> <leader>/ :call ToggleCommentV()<CR>
+
+set wildmenu
