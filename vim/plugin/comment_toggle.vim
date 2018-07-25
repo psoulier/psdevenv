@@ -31,9 +31,6 @@ set cpo&vim
 "   autocmd FILETYPE C  let b:CT_DELIMITED_COMMENT = { 'start': '/*', 'end': '*/' }
 "
 
-nmap     <silent> # :call ToggleComment()<CR><CR>0
-xnoremap <silent> # :call ToggleCommentV()<CR>
-
 
 "=====[ Implementation ]===============================
 
@@ -47,6 +44,9 @@ augroup CommentSupport
     autocmd BufNewFile,BufRead   *.p[lm],.t                        let b:CT_EOL_COMMENT = get(b:, 'CT_EOL_COMMENT', '#')
 
     autocmd FileType  perl6    let b:CT_DELIMITED_COMMENT = get(b:, 'CT_DELIMITED_COMMENT', {'start': '#`{{{', 'end': '}}}' })
+ 
+    autocmd FileType             c,cpp,cc,h,hpp,hh  let b:CT_EOL_COMMENT       = '//'
+    autocmd FileType             c,cpp,cc,h,hpp,hh  let b:CT_DELIMITED_COMMENT = { 'start': '/*', 'end': '*/' }
 augroup END
 
 " Work out whether the line has a comment then reverse that condition...

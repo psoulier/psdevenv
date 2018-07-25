@@ -1,18 +1,6 @@
 set nocompatible
 
-" Airline configuration.
-" Airline isn't so good using unpatched console fonts.  Only enable Airline
-" when GUI mode is running.
 let g:pathogen_disabled = []
-if ! has("gui_running")
-	call add(g:pathogen_disabled, 'vim-airline')
-else
-	call add(g:pathogen_disabled, 'vim-airline')
-	"let g:airline_powerline_fonts = 1
-	"let g:airline#extensions#tabline#enabled = 1
-	"let g:airline#extensions#tabline#fnamemod = ':t'
-	"set laststatus=2
-endif
 
 " The font specification seems to be a wee bit different for MacVim vs gvim
 " on Ubuntu.

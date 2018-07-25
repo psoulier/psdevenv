@@ -18,7 +18,7 @@ fi
 #
 cg()
 {
-    grep -nr --include="*.[ch]pp" --include="*.cc" --include="*.hh" "$@"
+    grep -nr --include="*.[ch]pp" --include="*.cc" --include="*.hh" --include="*.[ch]" "$@"
 }
 
 
