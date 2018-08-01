@@ -96,7 +96,10 @@ if has("gui_running")
 	colorscheme apprentice
 	"set bg=dark
 else
-	colorscheme dracula 
+	colorscheme dracula
+	let &t_SI.="\e[5 q"
+	let &t_SR.="\e[4 q"
+	let &t_EI.="\e[1 q"
 endif
 
 syntax on
@@ -112,6 +115,9 @@ set fillchars+=vert:┋
 "
 set listchars=tab:▸·
 set list
+" Really annoying to have a black background for tabs on a transparent
+" terminal.  Set BG color to none so it looks like all the other text.
+highlight SpecialKey ctermbg=NONE
 
 set autochdir
 
@@ -146,3 +152,5 @@ nmap     <silent> <leader>/ :call ToggleComment()<CR><CR>0
 xnoremap <silent> <leader>/ :call ToggleCommentV()<CR>
 
 set wildmenu
+set autoread
+

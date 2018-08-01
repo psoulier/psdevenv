@@ -3,7 +3,7 @@ if exists("b:current_syntax")
 	finish
 endif
 
-syntax keyword 	humuKeyword fun type let var if else for while public impl interface unique shared auto rec module import and or xor not return
+syntax keyword 	humuKeyword fun type let var if else for while public impl interface module import and or xor not return macro
 syntax keyword	humuType int uint uint8 uint16 uint32 uint64 bool float
 syntax keyword	humuBoolean true false
 syntax match 	humuLineComment		"//.*"
