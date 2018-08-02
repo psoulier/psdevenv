@@ -151,6 +151,9 @@ let g:DVB_TrimWS = 1
 nmap     <silent> <leader>/ :call ToggleComment()<CR><CR>0
 xnoremap <silent> <leader>/ :call ToggleCommentV()<CR>
 
+" Enable wildmenu.  Main reason I use is to select an open buffer.  
+" Enter "e: " then <Tab> and you'll get a list of open buffers you can
+" <T>/<T-S> through.
 set wildmenu
 set autoread
 
