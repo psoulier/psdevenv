@@ -3,8 +3,8 @@ if exists("b:current_syntax")
 	finish
 endif
 
-syntax keyword 	humuKeyword fun type let var if else for while public impl interface module import and or xor not return macro
-syntax keyword	humuType int uint uint8 uint16 uint32 uint64 bool float
+syntax keyword 	humuKeyword type let var if else for while module import export return macro void
+syntax keyword	humuType int int8 int16 int32 int64 uint uint8 uint16 uint32 uint64 bool float float32 float64
 syntax keyword	humuBoolean true false
 syntax match 	humuLineComment		"//.*"
 syntax region	humuBlockComment	start="/\*" end="\*/" contains=humuBlockComment,humuTodo

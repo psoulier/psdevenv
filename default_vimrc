@@ -113,11 +113,15 @@ set fillchars+=vert:┋
 "
 " Set the characters for showing hard tabs.
 "
+" Really annoying to have a black background for tabs on a transparent
+" terminal.  Set BG color to none so it looks like all the other text.  Also
+" set the foreground color to be a nice, unintrusive grey that almost blends
+" in with background.
+"
 set listchars=tab:▸·
 set list
-" Really annoying to have a black background for tabs on a transparent
-" terminal.  Set BG color to none so it looks like all the other text.
 highlight SpecialKey ctermbg=NONE
+highlight SpecialKey ctermfg=237 
 
 set autochdir
 
