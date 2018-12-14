@@ -120,8 +120,9 @@ set fillchars+=vert:┋
 "
 set listchars=tab:▸·
 set list
-highlight SpecialKey ctermbg=NONE
+highlight SpecialKey ctermbg=none
 highlight SpecialKey ctermfg=237 
+highlight Normal ctermbg=none
 
 set autochdir
 
