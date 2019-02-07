@@ -15,6 +15,7 @@ endif
 
 set autoindent
 set ruler
+
 filetype plugin on
 
 execute pathogen#infect()
