@@ -6,5 +6,5 @@ setlocal shiftwidth=4
 setlocal autoindent
 
 
-autocmd BufWritePre *.humu :call StripTrailingWhitespaces()
+autocmd BufWritePre *.rgb :call StripTrailingWhitespaces()
 

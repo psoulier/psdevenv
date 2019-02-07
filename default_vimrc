@@ -93,8 +93,8 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Setup default color scheme
 if has("gui_running")
-	colorscheme apprentice
-	"set bg=dark
+	colorscheme gruvbox
+	set bg=dark
 else
 	colorscheme dracula
 	let &t_SI.="\e[5 q"
@@ -123,6 +123,12 @@ set list
 highlight SpecialKey ctermbg=none
 highlight SpecialKey ctermfg=237 
 highlight Normal ctermbg=none
+
+if has("gui_macvim")
+	highlight Normal guibg=Black
+	highlight SpecialKey guibg=Black
+	highlight SpecialKey guifg=DarkSlateGray 
+endif
 
 set autochdir
 
