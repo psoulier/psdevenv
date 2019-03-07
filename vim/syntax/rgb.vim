@@ -3,7 +3,7 @@ if exists("b:current_syntax")
 	finish
 endif
 
-syntax keyword 	rgbKeyword type let var if else for while module import export return macro void
+syntax keyword 	rgbKeyword type def var if module import export return macro null goto
 syntax keyword	rgbType int int8 int16 int32 int64 uint uint8 uint16 uint32 uint64 bool float float32 float64
 syntax keyword	rgbBoolean true false
 syntax match 	rgbLineComment		"//.*"
