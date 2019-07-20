@@ -1,21 +1,24 @@
-[submodule "vim/bundle/vim-airline"]
-	path = vim/bundle/vim-airline
-	url = https://github.com/vim-airline/vim-airline
-[submodule "vim/bundle/dracula-theme"]
-	path = vim/bundle/dracula-theme
-	url = https://github.com/dracula/vim.git
-[submodule "vim/bundle/nerdtree"]
-	path = vim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule "vim/bundle/gruvbox"]
-	path = vim/bundle/gruvbox
-	url = https://github.com/morhetz/gruvbox.git
-[submodule "vim/bundle/ctrlp.vim"]
-	path = vim/bundle/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim.git
-[submodule "vim/bundle/Recover.vim"]
-	path = vim/bundle/Recover.vim
-	url = https://github.com/chrisbra/Recover.vim.git
 [submodule "tmux-themepack"]
 	path = tmux-themepack
 	url = https://github.com/jimeh/tmux-themepack.git
+[submodule "vim/pack/packages/start/nerdtree"]
+	path = vim/pack/packages/start/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/pack/packages/start/ctrlp.vim"]
+	path = vim/pack/packages/start/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule "vim/pack/packages/start/gruvbox"]
+	path = vim/pack/packages/start/gruvbox
+	url = https://github.com/morhetz/gruvbox.git
+[submodule "vim/pack/packages/start/vim"]
+	path = vim/pack/packages/start/vim
+	url = https://github.com/dracula/vim.git
+[submodule "vim/pack/packages/start/dracula"]
+	path = vim/pack/packages/start/dracula
+	url = https://github.com/dracula/vim.git
+[submodule "vim/pack/packages/opt/vim"]
+	path = vim/pack/packages/opt/vim
+	url = https://github.com/dracula/vim.git
+[submodule "vim/pack/packages/opt/dracula"]
+	path = vim/pack/packages/opt/dracula
+	url = https://github.com/dracula/vim.git

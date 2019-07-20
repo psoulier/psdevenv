@@ -24,53 +24,8 @@ being used.
     git submodule update --recursive
     ```
 
-
-## Notes to Self (mostly Vim)
-Need to try these:
-* Clang format
-* you complete me
-* nerd commenter
-* a.vim
-
-### Formatting Code
-
-* `%retab!` Convert tabs/spaces as per the current setting of `expandtab` (i.e., if `et` is set, all
-tabs are replaced with spaces and visa versa).  The '%' a range specifying the entire
-buffer, `!` uses `expandtab` setting.
-* `gg=G` Re-indent entire file (`gg` to top of file `=` indent, `G` to bottom of file).
-* Simple way to reformat selection of code, in visual mode: `=`
-
-### Search and Replace
-All search/replace operations are set to global by default via `gdefault`.
-
-* `:%s/search/replace/`
-* Clear last search: `<leader><space>`
-
-### Key Mappings
-Vim loads initialization files in an order something like the following:
-
-1. $VIM/vimrc
-2. $HOME/.vimrc
-3. $VIM/gvimrc
-4. $HOME/.gvimrc
-
-I was trying to map Alt- keys in my .vimrc for switching buffers, but they were being
-overridden.  MacVim has a bunch of default key mappings that override the Alt keys in gvimrc.
-I didn't want to maintain two initialization files
-
-Buffers
-
-- Previous/next buffer: `<C-b>` and `<C-n>`
-
-### Debugging Vim Scripts
-
-* `scriptnames` Useful for showing a list of all scripts and the load order.
-
-### File Type Extensions
-File type extensions should go in `vim/after/ftplugin` with the name of the *file type*.  The file
-type is different from the extension (i.e.: for markdown, there should be a file called
-`markdown.vim`; not `md.vim`).
-
+## Notes
+* [Vim](VIM.md)
 
 ## Bash Notes
 
