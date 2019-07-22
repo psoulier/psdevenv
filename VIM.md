@@ -1,15 +1,19 @@
 # Vim
+Various notes on using Vim.
 
-## Notes to Self (mostly Vim)
-Need to try these:
+In general, I find that very few plugins are useful to me beyond a passing
+amusement.  Nerdtree and Ctrl-P are the only two I actually use on a daily
+basis.  Some plugins that may be worth looking at:
 * Clang format
 * you complete me
 * nerd commenter
 * a.vim
 
-https://sanctum.geek.nz/arabesque/vim-anti-patterns/
+Some websites that have some good Vim notes:
+* https://sanctum.geek.nz/arabesque/vim-anti-patterns/
+* https://begriffs.com/posts/2019-07-19-history-use-vim.html?hn=3
 
-### Formatting Code
+## Formatting Code
 
 * `%retab!` Convert tabs/spaces as per the current setting of `expandtab` (i.e., if `et` is set, all
 tabs are replaced with spaces and visa versa).  The '%' a range specifying the entire
@@ -17,21 +21,31 @@ buffer, `!` uses `expandtab` setting.
 * `gg=G` Re-indent entire file (`gg` to top of file `=` indent, `G` to bottom of file).
 * Simple way to reformat selection of code, in visual mode: `=`
 
-### Search and Replace
+## Search and Replace
 All search/replace operations are set to global by default via `gdefault`.
+Matching whole word.  For example, I want to replace all `printf`'s with
+`DEBUG`, but don't want to catch stray `sprintf`'s in the replacement.  
+
+```
+;%s/\v<printf>/DEBUG/
+;%s/\<printf\>/DEBUG
+```
+
+The `\v` is "very magic" and just changes the escaping of meta-characters.  More
+info can be found with `;help pattern`
 
 * `:%s/search/replace/`
 * Clear last search: `<leader><space>`
 
-### Moving Around
+## Moving Around
 * Go back to last insertion point: two backticks or `gi`.  
 * Go forward/backwards to insertion points with `g;` and `g,`.
 
-### Misc
+## Misc
 * Delete a specific line.  For example, delete line 5 with `:5d`.
 * Replace pattern with a newline, i.e., replace "," with newline: `;%s/,/\r/`
 
-### Key Mappings
+## Key Mappings
 Vim loads initialization files in an order something like the following:
 
 1. $VIM/vimrc
@@ -47,27 +61,14 @@ Buffers
 
 - Previous/next buffer: `<C-b>` and `<C-n>`
 
-### Debugging Vim Scripts
+## Debugging Vim Scripts
 
 * `scriptnames` Useful for showing a list of all scripts and the load order.
 
-### File Type Extensions
+## File Type Extensions
 File type extensions should go in `vim/after/ftplugin` with the name of the *file type*.  The file
 type is different from the extension (i.e.: for markdown, there should be a file called
 `markdown.vim`; not `md.vim`).
-
-# Searching and Replacing
-
-Matching whole word.  For example, I want to replace all `printf`'s with
-`DEBUG`, but don't want to catch stray `sprintf`'s in the replacement.  
-
-```
-;%s/\v<printf>/DEBUG/
-;%s/\<printf\>/DEBUG
-```
-
-The `\v` is "very magic" and just changes the escaping of meta-characters.  More
-info can be found with `;help pattern`
 
 # Entering Unicode Characters
  You can enter unicode by going into insert/replace mode and then using

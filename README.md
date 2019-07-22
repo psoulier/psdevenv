@@ -1,8 +1,5 @@
 # Paul's Common Development Environment 
-Just a repo to keep vim and shell settings in one place. Most everything is a Git
-submodule except Pathogen and patched fonts for Airline.  Pathogen (`pathogen.vim`) needs to
-copied into `vim/autoload` and the patched fonts need to be installed for whatever OS is
-being used.
+Just a repo to keep vim and shell settings in one place. 
 
 1. Change the `.vim` directory to a symbolic link to the `vim` directory in this repo: 
     ```sh 

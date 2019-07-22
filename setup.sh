@@ -1,7 +1,7 @@
 
 PWD=`pwd`
 
-echo ln -s ${PWD}/vim ~/.vim
+#echo ln -s ${PWD}/vim ~/.vim
 
 IFS= read -r -d '' BASH_PROFILE << EOM
 if [ -f ${PWD}/bash_profile ]; then
@@ -9,9 +9,19 @@ if [ -f ${PWD}/bash_profile ]; then
 fi 
 EOM
 
-echo ${BASH_PROFILE} >> ~/.bashrc
+if ! ggrep psdevenv ~/.bash_profile; then 
+    echo "${BASH_PROFILE}" >> ~/.bash_profile
+fi
 
-echo "so ${PWD}/default_vimrc"
+WRITE_VIMRC=y
+if [ -f ~/.vimrc ]; then
+    read -p "~/.vimrc already exists; overwrite [yn]?" OVERWRITE
+fi
 
-echo git submodule init
-echo git submodule update --recursive
+if [[ $WRITE_VIMRC =~ [yY] ]]; then 
+    echo "so ${PWD}/default_vimrc" > ~/.vimrc
+    echo "" >> ~/.vimrc
+fi
+
+#echo git submodule init
+#echo git submodule update --recursive
