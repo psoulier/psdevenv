@@ -78,4 +78,14 @@ type is different from the extension (i.e.: for markdown, there should be a file
  * `^vxnn` where `xx` is hex
  * `^vuxxxx` where `xxxx` is a Unicode code point
 
+# Sourcing Text from File Into Buffer
+Sometimes it's helpful to copy a chunk of text from one file into your current,
+working buffer.  Copy and paste w/ a GUI would seem to be a preferable approach,
+however not always possible when working in consoles. The following can be used:
+
+```
+:put =readfile('/path/to/file.c')[149:199]
+```
+
+Note that the line numbers copied are [150,200]; the syntax is a 0-based array.
 

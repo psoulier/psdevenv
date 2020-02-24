@@ -23,5 +23,5 @@ if [[ $WRITE_VIMRC =~ [yY] ]]; then
     echo "" >> ~/.vimrc
 fi
 
-#echo git submodule init
-#echo git submodule update --recursive
+git submodule init
+git submodule update --recursive
