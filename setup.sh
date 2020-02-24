@@ -1,7 +1,7 @@
 
 PWD=`pwd`
 
-#echo ln -s ${PWD}/vim ~/.vim
+ln -s ${PWD}/vim ~/.vim
 
 IFS= read -r -d '' BASH_PROFILE << EOM
 if [ -f ${PWD}/bash_profile ]; then
