@@ -14,7 +14,6 @@ export LINE="\[\\033[38;5;241m\]"
 
 PS1="$LINE$EMD2(\`if [ \$? = 0 ]; then echo \[\\033[38\;5\;34m\]$PROMPT_GOOD; else echo \[\\033[38\;5\;160m\]$PROMPT_BAD; fi\`$LINE)$EMD5(\[\\033[38;5;220m\]\w$LINE)$EMD5\n\[\\033[38;5;33m\]$PROMPT_END\\[\\033[0m "
 
-
 PLATFORM=`uname`
 if [[ $PLATFORM = 'Darwin' ]]; then
     alias grep='ggrep --color=auto'

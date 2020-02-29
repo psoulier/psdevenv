@@ -1,7 +1,7 @@
 
 PWD=`pwd`
 
-#echo ln -s ${PWD}/vim ~/.vim
+ln -s ${PWD}/vim ~/.vim
 
 IFS= read -r -d '' BASH_PROFILE << EOM
 if [ -f ${PWD}/bash_profile ]; then
@@ -23,5 +23,5 @@ if [[ $WRITE_VIMRC =~ [yY] ]]; then
     echo "" >> ~/.vimrc
 fi
 
-#echo git submodule init
-#echo git submodule update --recursive
+git submodule init
+git submodule update --recursive
