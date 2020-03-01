@@ -55,7 +55,7 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <leader>f :silent grep <c-r><c-w> <bar> :copen <bar> :redraw! <CR>
 
 set number
-set cursorline
+set nocursorline
 
 
 set formatoptions=crqlj         " t - autowrap to textwidth
@@ -108,11 +108,14 @@ autocmd FileType html,css,js,less setl tw=80 expandtab shiftwidth=2 softtabstop=
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Setup default color scheme
+set t_Co=256
 if has("gui_running")
 	colorscheme gruvbox
 	set bg=dark
 else
-	colorscheme dracula
+	colorscheme gruvbox
+	set bg=dark
+"	hi normal ctermbg=233
 	let &t_SI.="\e[5 q"
 	let &t_SR.="\e[4 q"
 	let &t_EI.="\e[1 q"

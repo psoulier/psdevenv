@@ -9,8 +9,14 @@ if [ -f ${PWD}/bash_profile ]; then
 fi 
 EOM
 
-if ! ggrep psdevenv ~/.bash_profile; then 
-    echo "${BASH_PROFILE}" >> ~/.bash_profile
+PLAT = "$(uname -s)"
+case "${PLAT}" in
+    Darwin) BASHRC=bash_profile
+    *) BASHRC=bashrc
+esac
+
+if ! ggrep psdevenv ~/.${BASHRC}; then 
+    echo "${BASH_PROFILE}" >> ~/.${BASHRC}
 fi
 
 WRITE_VIMRC=y
