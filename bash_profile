@@ -11,8 +11,34 @@ export PROMPT_GOOD=$'\xe2\x9c\x94'
 export PROMPT_BAD=$'\xe2\x9c\x98'
 export GRAY="\[\\033[38;5;241m\]"
 export LINE="\[\\033[38;5;241m\]"
+#####
 
-PS1="$LINE$EMD2(\`if [ \$? = 0 ]; then echo \[\\033[38\;5\;34m\]$PROMPT_GOOD; else echo \[\\033[38\;5\;160m\]$PROMPT_BAD; fi\`$LINE)$EMD5(\[\\033[38;5;220m\]\w$LINE)$EMD5\n\[\\033[38;5;33m\]$PROMPT_END\\[\\033[0m "
+PROMPT=$'\xE2\x9D\xAF'
+ARROW=$'\xEE\x82\xB0'
+BRANCH=$'\xEE\x82\xA0'
+
+__prompt_git_branch()
+{
+    echo -n "$BRANCH "
+    if git rev-parse --git-dir >/dev/null 2>&1; then
+        git branch 2>/dev/null | grep '^*' | colrm 1 2
+    else
+        echo -n "--- "
+    fi
+}
+
+RST="\[\033[0m\]"
+FG="\[\033[38;5;"
+BG="\[\033[48;5;"
+WHITE="231m\]"
+BLACK="232m\]"
+COLOR_1="171m\]"
+COLOR_2="99m\]"
+COLOR_3="27m\]"
+GOOD=$'\[\xe2\x9c\x94\]'
+BAD=$'\[\xe2\x9c\x98\]'
+
+PS1="$FG$WHITE$BG$COLOR_1 \$(if [ \$? = 0 ]; then echo $GOOD; else echo $BAD; fi) $FG$COLOR_1$BG$COLOR_2$ARROW${FG}${WHITE} \w $FG$COLOR_2$BG$COLOR_3$ARROW${FG}${WHITE} \$(__prompt_git_branch) $FG$COLOR_3$BG$BLACK${ARROW}$RST\n$FG$COLOR_1$PROMPT$FG$COLOR_2$PROMPT$FG$COLOR_3$PROMPT$RST "
 
 PLATFORM=`uname`
 if [[ $PLATFORM = 'Darwin' ]]; then
