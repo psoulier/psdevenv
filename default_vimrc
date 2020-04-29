@@ -110,15 +110,17 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 " Setup default color scheme
 set t_Co=256
 if has("gui_running")
+	let g:gruvbox_italic=1
 	colorscheme gruvbox
 	set bg=dark
 else
+	let g:gruvbox_italic=1
 	colorscheme gruvbox
 	set bg=dark
-"	hi normal ctermbg=233
 	let &t_SI.="\e[5 q"
 	let &t_SR.="\e[4 q"
 	let &t_EI.="\e[1 q"
+"	hi normal ctermbg=233
 endif
 
 syntax on
@@ -142,6 +144,7 @@ set list
 highlight SpecialKey ctermbg=none
 highlight SpecialKey ctermfg=237 
 highlight Normal ctermbg=none
+highlight Comment cterm=italic
 
 if has("gui_macvim")
 	highlight Normal guibg=Black
@@ -168,13 +171,6 @@ set secure
 " No you don't have to press shift key :) 
 nnoremap ; :
 
-" Awesome script by Damian Conway; lets you move visual blocks of code around
-" with Shift-ArrowKey.  
-vmap  <expr>  <S-LEFT>   DVB_Drag('left')
-vmap  <expr>  <S-RIGHT>  DVB_Drag('right')
-vmap  <expr>  <S-DOWN>   DVB_Drag('down')
-vmap  <expr>  <S-UP>     DVB_Drag('up')
-let g:DVB_TrimWS = 1
 
 " Also from Damian Conway; toggle comments for blocks of code.
 nmap     <silent> <leader>/ :call ToggleComment()<CR><CR>0

@@ -37,6 +37,16 @@ version of bash for the OS using Homebrew:
 4. Update list of acceptable shells for the system: `cat /usr/local/bin/bash >> /etc/shells`
 5. Set user's shell: `chsh -s /usr/local/bin/bash
     
+## Ubuntu Setup
+* I use i3 window manager on a VM (which caused some issues).  
+    * With VMWare, needed to add `vmware-user` to `.profiles` to get clipboard working. 
+    * Use `feh --bg-center wallpaper-image` to set background.  This actually
+    generates a script that I add to `.profile`.  This way, anytime I change the
+    background it's effectively restored next boot.
+    * Used `urxvt` for terminal because it supports transparency.  This was a
+    pain.  Had to modify `.Xdefaults` to set fonts and other configuration
+    instead of `.Xresources` as many articles indicate.  Probably a distro
+    thing.
 
 ## GNU Make Notes
 

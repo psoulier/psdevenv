@@ -19,6 +19,9 @@ BRANCH=$'\xEE\x82\xA0'
 
 __prompt_git_branch()
 {
+    # Add this as a pprefix to the branch name to get the current name of the repo
+    # Intended to be useful for identifying submodules
+    # basename `git rev-parse --show-toplevel`
     echo -n "$BRANCH "
     if git rev-parse --git-dir >/dev/null 2>&1; then
         git branch 2>/dev/null | grep '^*' | colrm 1 2
